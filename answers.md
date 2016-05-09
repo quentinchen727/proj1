@@ -24,3 +24,6 @@ A very interesting small-scale game and it covers a lot of concept. Really learn
 
 # Extra credit: Link your Heroku deployed app
 https://salty-plateau-80979.herokuapp.com/
+
+My github link is:
+git@github.com:quentinchen727/proj1.git
