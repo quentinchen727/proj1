@@ -1,3 +1,17 @@
+<div class="form-group">
+  <h3>trained pokemons</h3>
+  <% all_pokemon_of_a_trainer = current_trainer.pokemons%>
+  <ul>
+    <% all_pokemon_of_a_trainer.each do |x| %>
+        <li><%= x.name%> with level <%=x.level%>  and health <%=x.health%>
+          <%= button_to "Damage!", damage_path(id: x), :class => "button small", :method => :patch %>
+        </li>
+    <% end %>
+    <% if current_trainer %>
+    <%= button_to "Create a pokemon!", new_path, :class => "button small", :method => :get %>
+    <% end %>
+  </ul>
+</div>
 <div class="authform">
   <h3>Edit <%= resource_name.to_s.humanize %></h3>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
@@ -13,6 +27,7 @@
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
     </div>
+
     <fieldset>
       <p>Leave these fields blank if you don't want to change your password.</p>
       <div class="form-group">

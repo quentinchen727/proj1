@@ -1,0 +1,7 @@
+<%= simple_form_for Pokemon.new, :url=> url_for(:action=>'create', :controller => 'pokemon'), :method=>'post'  do |f| %>
+    <%= f.input :name, label:'Name' %>
+    <%= f.button :submit %>
+    <% flash.each do |error,error_msg| %>
+        <p>Error: <%= error_msg%></p>
+    <% end %>
+<% end %>
